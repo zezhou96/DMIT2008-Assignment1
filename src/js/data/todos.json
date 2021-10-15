@@ -1,0 +1,52 @@
+[
+    {
+        "id": "ab45d25f",
+        "category": "Front End",
+        "title": "JavaScript Lesson",
+        "isComplete": true,
+        "startDate": "Wednesday September 3rd",
+        "startTime":"9:00am",
+        "endDate": "Wednesday September 3rd",
+        "endTime":"10:00am"
+    },
+    {
+        "id": "ty74d29y",
+        "category": "Back End",
+        "title": "C# Lesson",
+        "isComplete": true,
+        "startDate": "Wednesday September 3rd",
+        "startTime":"11:00am",
+        "endDate": "Wednesday September 3rd",
+        "endTime":"12:00pm"
+    },
+    {
+        "id": "ju67i90t",
+        "category": "UI",
+        "title": "GUI Lesson",
+        "isComplete": false,
+        "startDate": "Thursday September 4th",
+        "startTime":"1:00pm",
+        "endDate": "Thursday September 4th",
+        "endTime":"2:00pm"
+    },
+    {
+        "id": "ol21y60n",
+        "category": "Database",
+        "title": "SQL Lesson",
+        "isComplete": false,
+        "startDate": "Friday September 5th",
+        "startTime":"2:00pm",
+        "endDate": "Friday September 5th",
+        "endTime":"3:00pm"
+    },
+    {
+        "id": "as21h38b",
+        "category": "Business Analysis",
+        "title": "BA Lesson",
+        "isComplete": true,
+        "startDate": "Saturday September 6th",
+        "startTime":"5:00pm",
+        "endDate": "Saturday September 6th",
+        "endTime":"6:00pm"
+    }
+]
