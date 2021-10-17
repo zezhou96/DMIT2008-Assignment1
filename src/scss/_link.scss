@@ -8,9 +8,26 @@
     font-size: 1.3rem;
 }
 
-a:hover{
+a.link-head:hover{
     text-decoration: none;
     color: #145A32;
     border: 1px solid #145A32;
     background-color: #A3E4D7;
+}
+
+.link-error{
+    border-radius: 5px;
+    padding: 0.2rem 1rem 0.5rem 1rem;
+    background-color: #F8F3F3 ;
+    color: #a04216;
+    border: 1px solid #a04216;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+a.link-error:hover{
+    text-decoration: none;
+    color: #A96631;
+    border: 1px solid #A96631;
+    background-color: #FCB792;
 }

@@ -10,10 +10,12 @@ const homePage = function(){
     const h1 = levelHeading('h1', 'Ze\'s App', 'page-header')
     const h2 = tagline('h2', 'A way to organize your classes!', 'tagline-head')
     const linkElement = link('to do app', '/todo', 'link-head')
+    const linkElementError = link('Error Page', '/error', 'link-head')
     header.appendChild(makeElement(logo()))
     header.appendChild(h1)   
     header.appendChild(h2)   
     header.appendChild(linkElement)
+    header.appendChild(linkElementError) // Error Page
 
     return header
 }
