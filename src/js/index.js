@@ -1,7 +1,3 @@
-const homePage = function (){
+import Router from "./router/router";
 
-   const pageHeader = document.createElement('header')
-     
-}
-
-export default homePage
+Router(window.location.pathname)
