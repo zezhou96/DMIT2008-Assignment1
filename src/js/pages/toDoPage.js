@@ -2,8 +2,9 @@ import levelHeading from "../components/ui/header";
 import logoHeader from "../components/icons/logo-header";
 import makeElement from "../utils/makeElement";
 import tagline from "../components/ui/tagline";
-import getTodo from "../utils/getTodo";
-import listElement from "../components/ui/list";
+import { getStore } from "../redux/store";
+import toDoTemplate from "../components/cards/toDo";
+import classes from "../components/cards/classes";
 
 const todoPage = function(){
     // Header
@@ -16,9 +17,14 @@ const todoPage = function(){
     header.appendChild(h2)   
 
     // List
-    const listItem = getTodo()
-    console.log(listItem)
-    // header.appendChild(listItem) // breaks
+    const todoList = getStore()
+    const container = toDoTemplate()
+    if(todoList !== null){
+        const ul = container.querySelector('ul')
+        const elements = todoList.map(x => classes(x))
+        elements.forEach(element => ul.append(element))
+        header.appendChild(container)
+    }
     
     return header
 }
