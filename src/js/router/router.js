@@ -5,9 +5,10 @@ import { errorPage } from "../pages/pageNotFound";
 const Router = function(pathname){
     const routes = {
         "/": homePage(),
-        "/todo": todoPage(),
-        "/error": errorPage()   //ErrorPage
+        "/todo": todoPage()
     }
+
+    const isValidRoute = Object.keys(routes).find(key => key === pathname)
 
     const app = document.querySelector('#app')
     app.innerHTML = ''
@@ -18,7 +19,12 @@ const Router = function(pathname){
         window.location.origin + pathname
     )
 
-    app.appendChild(routes[window.location.pathname])
+    if (isValidRoute === undefined) {
+        app.appendChild(errorPage())
+    }
+    else {
+        app.appendChild(routes[window.location.pathname])
+    }    
 }
 
 export default Router
