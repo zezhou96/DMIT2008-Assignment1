@@ -5,6 +5,7 @@ import tagline from "../components/ui/tagline";
 import { getStore } from "../redux/store";
 import toDoTemplate from "../components/cards/toDo";
 import classes from "../components/cards/classes";
+import addButton from "../components/ui/addButton";
 
 const todoPage = function(){
     // Header
@@ -25,6 +26,10 @@ const todoPage = function(){
         elements.forEach(element => ul.append(element))
         div.appendChild(container)
     }
+
+    // Add button
+    const buttonAdd = addButton()
+    div.appendChild(buttonAdd)
     
     return div
 }
