@@ -8,13 +8,13 @@ import classes from "../components/cards/classes";
 
 const todoPage = function(){
     // Header
-    const header = document.createElement('header')
-    header.classList.add('page-header2')
+    const div = document.createElement('div')
+    div.classList.add('page-header2')
     const h1 = levelHeading('h1', 'Ze\'s App', 'page-header2')
     const h2 = tagline('h2', 'A way to organize your classes!', 'tagline-head2')
-    header.appendChild(makeElement(logoHeader()))
-    header.appendChild(h1)   
-    header.appendChild(h2)   
+    div.appendChild(makeElement(logoHeader()))
+    div.appendChild(h1)   
+    div.appendChild(h2)   
 
     // List
     const todoList = getStore()
@@ -23,10 +23,10 @@ const todoPage = function(){
         const ul = container.querySelector('ul')
         const elements = todoList.map(x => classes(x))
         elements.forEach(element => ul.append(element))
-        header.appendChild(container)
+        div.appendChild(container)
     }
     
-    return header
+    return div
 }
 
 export {todoPage}
