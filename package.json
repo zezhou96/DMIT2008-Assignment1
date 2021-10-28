@@ -2,6 +2,7 @@
   "name": "workflow",
   "version": "1.0.0",
   "description": "Fewder is a simple Front End Framework for developing Web App's using modules",
+  "git": "https://github.com/zezhou96/class-organization-app",
   "directories": {
     "doc": "docs"
   },
