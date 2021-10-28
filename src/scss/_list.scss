@@ -20,6 +20,26 @@
     }
 }
 
+.listItemLI:first-child{
+    border: 2px solid #ff3385;
+}
+
+.listItemLI:nth-child(2){
+    border: 2px solid #ff9900;
+}
+
+.listItemLI:nth-child(3){
+    border: 2px solid #73e600;
+}
+
+.listItemLI:nth-child(4){
+    border: 2px solid #00e6e6;
+}
+
+.listItemLI:last-child{
+    border: 2px solid #6600ff;
+}
+
 .listAside{
     font-size: 1rem;
     margin: 3rem 0;
