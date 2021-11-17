@@ -6,6 +6,7 @@ import { getStore } from "../redux/store";
 import toDoTemplate from "../components/cards/toDo";
 import classes from "../components/cards/classes";
 import addButton from "../components/ui/addButton";
+import Router from "../router/router";
 
 const todoPage = function(){
     // Header
@@ -17,13 +18,22 @@ const todoPage = function(){
     div.appendChild(h1)   
     div.appendChild(h2)   
 
+    function onDeleteClass(e){
+        const classId = e.currentTarget.dataset.key
+        const selectedClass = getStore().filter((selectedClass) => selectedClass.id === classId)
+        Router('/delete', selectedClass[0])
+    }
+
     // List
     const todoList = getStore()
     const container = toDoTemplate()
     if(todoList !== null){
         const ul = container.querySelector('ul')
         const elements = todoList.map(x => classes(x))
-        elements.forEach(element => ul.append(element))
+        elements.forEach(element => {
+            element.querySelector('#delete').addEventListener('click', onDeleteClass)            
+            ul.append(element)
+        })
         div.appendChild(container)
     }
 

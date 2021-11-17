@@ -1,11 +1,13 @@
 import { homePage } from "../pages/home";
 import { todoPage } from "../pages/toDoPage";
 import { errorPage } from "../pages/pageNotFound";
+import deletePage from "../pages/deletePage";
 
 const Router = function(pathname){
     const routes = {
         "/": homePage(),
-        "/todo": todoPage()
+        "/todo": todoPage(),
+        "/delete": deletePage()
     }
 
     const isValidRoute = Object.keys(routes).find(key => key === pathname)
