@@ -3,12 +3,13 @@ import { todoPage } from "../pages/toDoPage";
 import { errorPage } from "../pages/pageNotFound";
 import deletePage from "../pages/deletePage";
 
-const Router = function(pathname){
-    const routes = {
-        "/": homePage(),
-        "/todo": todoPage(),
-        "/delete": deletePage()
-    }
+const routes = {
+    "/": homePage,
+    "/todo": todoPage,
+    "/delete": deletePage
+}
+
+const Router = function(pathname, params=null){    
 
     const isValidRoute = Object.keys(routes).find(key => key === pathname)
 
@@ -25,7 +26,7 @@ const Router = function(pathname){
         app.appendChild(errorPage())
     }
     else {
-        app.appendChild(routes[window.location.pathname])
+        app.appendChild(routes[isValidRoute](params))
     }    
 }
 

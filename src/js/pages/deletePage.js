@@ -38,18 +38,6 @@ const deletePage = function(props){
             reducer(action)
             cleanup()
         }
-        
-        // const index = getStore().findIndex((classes) => {
-        //     return (classes.id === props.id)
-        // })
-
-        // const action = {
-        //     type:"delete",
-        //     payload:{index},
-        //     cb:()=>Router('/todo')
-        // }
-
-        // reducer(action)
     }
     
     const div = document.createElement('div')

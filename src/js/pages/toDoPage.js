@@ -19,9 +19,8 @@ const todoPage = function(){
     div.appendChild(h2)   
 
     function onDeleteClass(e){
-        const classId = e.currentTarget.dataset.key
-        const selectedClass = getStore().filter((selectedClass) => selectedClass.id === classId)
-        Router('/delete', selectedClass[0])
+        const toDoId = {id:e.currentTarget.dataset.key}
+        Router('/delete', toDoId)
     }
 
     // List
