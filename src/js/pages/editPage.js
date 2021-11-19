@@ -25,11 +25,12 @@ const editPage = function(props){
     function onEditClass(e){
         if (props !== null){
             Router('/todo')
-            const editClass = props
-            const index = getStore().findIndex(classes => classes.id === editClass.id)
+            const editClass = Object.assign({}, {id:todoForm.querySelector('#ID').value}, {category:todoForm.querySelector('#Category').value}, {isComplete:todoForm.querySelector('#isCompleted').value}, {title:todoForm.querySelector('#title').value}, {startDate:todoForm.querySelector('#startDate').value}, {startTime:todoForm.querySelector('#startTime').value}, {endDate:todoForm.querySelector('#endDate').value}, {endTime:todoForm.querySelector('#endTime').value})
+            console.log(editClass)
+            const index = getStore().findIndex(classes => classes.id === props.id)
             const action = {
                 type:"edit",
-                payload:{index},
+                payload:{index, editClass},
                 cb:()=> Router('/todo')
             }
 
