@@ -1,0 +1,29 @@
+.classForm{
+    font-weight: bold;
+    text-align: left;
+    label{
+        display: block;
+    }    
+}
+
+.classFormFlex{
+    display: flex;    
+    margin: 1rem 0;
+    div:first-child{
+        margin-right: 2rem;
+    }
+}
+
+#ID{
+    width: 25.5rem;
+}
+
+#isCompleted{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+#title{
+    width: 25.5rem;
+}

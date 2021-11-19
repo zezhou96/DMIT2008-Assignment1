@@ -13,7 +13,6 @@ const cancelButton = button("cancel")
 const deleteButton = button("delete")
 
 const deletePage = function(props){
-    console.log(props)
     
     function cleanup(){
         cancelButton.removeEventListener('click', onCancelDelete)  
@@ -29,10 +28,7 @@ const deletePage = function(props){
         if (props !== null) {
             Router('/todo')
             const removeClass = props
-            console.log(props)
             const index = getStore().findIndex(classes => classes.id === removeClass.id)
-            console.log(removeClass.id)
-            console.log(index)
             const action = {
                 type:"delete",
                 payload:{index},

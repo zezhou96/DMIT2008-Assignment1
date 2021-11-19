@@ -23,6 +23,11 @@ const todoPage = function(){
         Router('/delete', toDoId)
     }
 
+    function onEditClass(e){
+        const toDoId = {id:e.currentTarget.dataset.key}
+        Router('/edit', toDoId)
+    }
+
     // List
     const todoList = getStore()
     const container = toDoTemplate()
@@ -30,7 +35,8 @@ const todoPage = function(){
         const ul = container.querySelector('ul')
         const elements = todoList.map(x => classes(x))
         elements.forEach(element => {
-            element.querySelector('#delete').addEventListener('click', onDeleteClass)            
+            element.querySelector('#delete').addEventListener('click', onDeleteClass) 
+            element.querySelector('#edit').addEventListener('click', onEditClass)        
             ul.append(element)
         })
         div.appendChild(container)
