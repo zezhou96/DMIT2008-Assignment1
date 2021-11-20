@@ -14,7 +14,7 @@ const formTemplate = function({id, category, isComplete, title, startDate, start
                 </div>
                 <div>
                     <label>Completed</label>
-                    <input type="checkbox" id="isCompleted" ${isComplete? "checked": ""} value="${isComplete}">
+                    <input type="checkbox" id="isCompleted" value="${isComplete}" ${isComplete? "checked": ""}>
                 </div>
             </div>
             <div>

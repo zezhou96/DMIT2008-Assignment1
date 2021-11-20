@@ -7,7 +7,7 @@ const classes = function({id, category, title, endDate, isComplete}){
             <p><span>${title}</span></p>
             <p><b>Category:</b> ${category}</p>
             <p><b>Due:</b> ${endDate}</p>
-            <p class=completeItem>${isComplete ? "<b>Complete</b>": " "}</p>
+            <p class=completeItem>${isComplete? "<b>Complete</b>": " "}</p>
         </div>
         <p class="listButton" data-key="${id}">
             <button id="edit" data-key="${id}">
