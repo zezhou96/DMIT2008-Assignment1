@@ -36,8 +36,16 @@
     border: 2px solid #00e6e6;
 }
 
-.listItemLI:last-child{
+.listItemLI:nth-child(5){
     border: 2px solid #6600ff;
+}
+
+.listItemLI:nth-child(6){
+    border: 2px solid #1F66C8;
+}
+
+.listItemLI:nth-child(7){
+    border: 2px solid #E5A4E1;
 }
 
 .listAside{
