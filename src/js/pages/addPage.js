@@ -3,6 +3,7 @@ import logoHeader from "../components/icons/logo-header"
 import button from "../components/ui/button"
 import levelHeading from "../components/ui/header"
 import tagline from "../components/ui/tagline"
+import reducer from "../redux/reducers"
 import Router from "../router/router"
 import makeElement from "../utils/makeElement"
 
@@ -24,7 +25,14 @@ const addPage = function(props){
     function onAddClass(e){
         Router('/todo')
         const addClass = Object.assign(Object.assign({}, {id:todoForm.querySelector('#ID').value}, {category:todoForm.querySelector('#Category').value}, {isComplete:todoForm.querySelector('#isCompleted').checked}, {title:todoForm.querySelector('#title').value}, {startDate:todoForm.querySelector('#startDate').value}, {startTime:todoForm.querySelector('#startTime').value}, {endDate:todoForm.querySelector('#endDate').value}, {endTime:todoForm.querySelector('#endTime').value}))
-        console.log(addClass)
+        const action = {
+            type:"add",
+            payload:{addClass},
+            cb:()=> Router('/todo')
+        }
+
+        reducer(action)
+        cleanup()
     }
 
     // Header

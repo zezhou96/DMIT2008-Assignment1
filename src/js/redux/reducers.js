@@ -18,6 +18,11 @@ function reducer(action){
             action.cb()
         return "edit employee";
         case "add": 
+            const addStore = getStore();
+            const addProps = action.payload.addClass;
+            const addNewStore = [...addStore, addProps]
+            updateStore(addNewStore)
+            action.cb()
         return "add new employee";
         default: return store
     }
