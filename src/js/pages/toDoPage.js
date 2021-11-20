@@ -7,6 +7,7 @@ import toDoTemplate from "../components/cards/toDo";
 import classes from "../components/cards/classes";
 import addButton from "../components/ui/addButton";
 import Router from "../router/router";
+import {v4 as uuidv4} from 'uuid';
 
 const todoPage = function(){
     // Header
@@ -28,6 +29,11 @@ const todoPage = function(){
         Router('/edit', toDoId)
     }
 
+    function onAddClass(e){
+        const toDoId = {id:uuidv4().substr(0,8)}
+        Router('/add', toDoId)
+    }
+
     // List
     const todoList = getStore()
     const container = toDoTemplate()
@@ -36,7 +42,7 @@ const todoPage = function(){
         const elements = todoList.map(x => classes(x))
         elements.forEach(element => {
             element.querySelector('#delete').addEventListener('click', onDeleteClass) 
-            element.querySelector('#edit').addEventListener('click', onEditClass)        
+            element.querySelector('#edit').addEventListener('click', onEditClass)     
             ul.append(element)
         })
         div.appendChild(container)
@@ -44,6 +50,7 @@ const todoPage = function(){
 
     // Add button
     const buttonAdd = addButton()
+    buttonAdd.addEventListener('click', onAddClass)
     div.appendChild(buttonAdd)
     
     return div
