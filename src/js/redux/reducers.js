@@ -8,7 +8,7 @@ function reducer(action){
             const newStore = [...store.slice(0,index), ...store.slice(index + 1)]
             updateStore(newStore)
             action.cb()
-        return "remove employee";
+        return "remove class";
         case "edit": 
             const editStore = getStore();           
             const editProps = action.payload.editClass;
@@ -16,14 +16,14 @@ function reducer(action){
             const editNewStore = [...editStore.slice(0, editIndex), editProps, ...editStore.slice(editIndex + 1)]
             updateStore(editNewStore)
             action.cb()
-        return "edit employee";
+        return "edit class";
         case "add": 
             const addStore = getStore();
             const addProps = action.payload.addClass;
             const addNewStore = [...addStore, addProps]
             updateStore(addNewStore)
             action.cb()
-        return "add new employee";
+        return "add new class";
         default: return store
     }
 }
